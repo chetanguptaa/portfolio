@@ -1,12 +1,19 @@
-import Link from "next/link"
+import About from "../components/About";
+import Contact from "../components/Contact";
+import Intro from "../components/Intro";
+import Projects from "../components/Projects";
+import SectionDivider from "../components/SectionDivider";
+import Skills from "../components/Skills";
 
 export default function Home() {
   return (
-    <div>
-      <p>Homepage</p>
-      <hr />
-      <Link href="/contact" className="m-5">Contact Me</Link>
-      <Link href="/projects" className="m-5">Projects and Skills</Link>
-    </div>
-  )
+    <main className="flex flex-col items-center px-4">
+      <Intro />
+      <SectionDivider />
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
+    </main>
+  );
 }
