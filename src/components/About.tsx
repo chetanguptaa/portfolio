@@ -22,23 +22,23 @@ function About() {
       <p className="mb-3">
         Currently pursuing a degree in{" "}
         <span className="font-medium">Computer Science</span>, I have a passion for programming. I have learned{" "}
-        <span className="font-medium">full-stack web development, DevOps</span>.{" "}I am currently learning <span className="font-medium">Web 3</span>.{" "}
+        <span className="font-medium">full-stack web development, DevOps</span>.{" "}I am currently learning about <span className="font-medium">Web 3</span>.{" "}
         <span className="italic">My favorite part of programming</span> is the
         problem-solving aspect. I <span className="underline">love</span> the
         feeling of finally figuring out a solution to a problem. My core skills
         are{" "}
         <span className="font-medium">
-          React, Next.js, Node.js, MongoDB, Docker, Kubernetes
+          ReactJs, ExpressJs, Docker, Kubernetes
         </span>
-        . I am also familiar with TypeScript, PostgreSQL. I am always looking to
+        . I am also familiar with AWS, PostgreSQL. I am always looking to
         learn new technologies. I am currently looking for a{" "}
         <span className="font-medium">full-time position</span> as a software
         developer.
       </p>
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy watching movies. I also enjoy{" "}
+        <span className="italic">When I'm not coding</span>, I enjoy watching movies and play football. I also enjoy{" "}
         <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}<span className="font-medium">philosophy and psychology</span>
+        learning about{" "}<span className="font-medium">philosophy and psychology</span>.
       </p>
     </motion.section>
   );
