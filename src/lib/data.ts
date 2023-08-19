@@ -25,26 +25,30 @@ export const projectsData = [
   {
     title: "Google DOCS Clone",
     description:
-      "Developed a Google Docs clone utilizing the MERN (MongoDB, Express.js, React.js, Node.js) stack.Implemented Yjs for Conflict-free Replicated Data Types (CRDT).",
+      "Developed a Google Docs clone utilizing the MERN stack.Implemented Yjs for CRDT.",
     tags: ["React", "Express", "MongoDB", "Docker"],
+    link: "https://github.com/chetanguptaa/google-docs-clone"
   },
   {
-    title: "Web3 based PayPal Clone",
+    title: "Web3 PayPal Clone",
     description:
       "Implemented smart contracts for secure transactions and user management using solidity.",
     tags: ["React", "Express", "TypeScript", "Solidity"],
+    link: "https://github.com/chetanguptaa/paypal-clone"
   },
   {
-    title: "Course Selling Website.",
+    title: "Course Selling Website",
     description:
-      "Developed a Course Selling Website utilizing the MERN stack.Validated requests using middleware to ensure data integrity.",
+      "Developed a Course Selling Website utilizing the MERN stack.",
     tags: ["React", "Express", "MongoDB"],
+    link: "https://github.com/chetanguptaa/course-era"
   },
   {
-    title: "NodeJS Application Using Docker and Kubernetes cluster",
+    title: "NodeJS Application Using Docker and Kubernetes",
     description:
-      "Created a system used to handle Database, and server orchestration using docker, docker-compose.",
-    tags: ["React", "Express", "MongoDB", "Docker", "Kubernetes"],
+      "Created a system to handle Database, and server orchestration using docker, Kubernetes.",
+    tags: ["Express", "MongoDB", "Docker", "Kubernetes"],
+    link: "https://github.com/chetanguptaa/task-manager"
   }
 ] as const;
 

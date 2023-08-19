@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { FaGithubSquare } from "react-icons/fa";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -10,6 +11,7 @@ export default function Project({
   title,
   description,
   tags,
+  link,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -49,6 +51,13 @@ export default function Project({
                 ))}
               </ul>
             </div>
+            <a
+                className="p-4 text-gray-700 flex items-center text-[1.5rem] focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer"
+                href={link}
+                target="_blank"
+              >
+                <FaGithubSquare />
+              </a>
           </div>
         </section>
       </motion.div>
