@@ -23,33 +23,26 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "Google DOCS Clone",
+    title: "PaperSync",
     description:
-      "Developed a Google Docs clone utilizing the MERN stack.Implemented Yjs for CRDT.",
+      "paperSync is a user-friendly document creation and collaboration tool. Implemented using the MERN stack and Yjs for CRDT.",
     tags: ["React", "Express", "MongoDB", "Docker"],
-    link: "https://github.com/chetanguptaa/google-docs-clone"
+    link: "https://github.com/chetanguptaa/paper-sync",
   },
   {
-    title: "Web3 PayPal Clone",
+    title: "CryptoPay",
     description:
       "Implemented smart contracts for secure transactions and user management using solidity.",
     tags: ["React", "Express", "TypeScript", "Solidity"],
-    link: "https://github.com/chetanguptaa/paypal-clone"
+    link: "https://github.com/chetanguptaa/crypto-pay",
   },
   {
-    title: "Course Selling Website",
+    title: "Wacky Wisdom",
     description:
-      "Developed a Course Selling Website utilizing the MERN stack.",
-    tags: ["React", "Express", "MongoDB"],
-    link: "https://github.com/chetanguptaa/course-era"
+      "Developed a QUIZ app using NextJS 13, styling using TailwindCSS, and by using OpenAI api.",
+    tags: ["NextJS", "tailwindCSS", "OpenAI API"],
+    link: "https://github.com/chetanguptaa/quiz-app",
   },
-  {
-    title: "NodeJS Application Using Docker and Kubernetes",
-    description:
-      "Created a system to handle Database, and server orchestration using docker, Kubernetes.",
-    tags: ["Express", "MongoDB", "Docker", "Kubernetes"],
-    link: "https://github.com/chetanguptaa/task-manager"
-  }
 ] as const;
 
 export const skillsData = [
@@ -58,24 +51,10 @@ export const skillsData = [
   "React",
   "Express",
   "MongoDB",
+  "Next.js",
   "Git",
   "Docker",
   "Kubernetes",
 ] as const;
 
-
-export const familiarWithSkillsData = [
-  "Terraform",
-  "AWS",
-  "Next.js",
-  "Python",
-  "FireBase"
-] as const;
-
-
-
-/**Developed a Google Docs clone utilizing the MERN (MongoDB, Express.js, React.js, Node.js) stack.
-Implemented Yjs for Conflict-free Replicated Data Types (CRDT), enabling real-time collaboration among multiple users with automatic conflict resolution.
-Implemented user authentication features (login/signup) using secure practices like hashed passwords and JWT (JSON Web Tokens).
-Integrated a link sharing feature, allowing users to share documents securely with others, enhancing collaboration and document accessibility.
- */
+export const familiarWithSkillsData = ["Terraform", "AWS", "Python"] as const;
