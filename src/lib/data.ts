@@ -41,7 +41,7 @@ export const projectsData = [
     description:
       "Developed a QUIZ app using NextJS 13, styling using TailwindCSS, and by using OpenAI api.",
     tags: ["NextJS", "tailwindCSS", "OpenAI API"],
-    link: "https://github.com/chetanguptaa/quiz-app",
+    link: "https://github.com/chetanguptaa/q-app",
   },
 ] as const;
 
@@ -51,7 +51,7 @@ export const skillsData = [
   "React",
   "Express",
   "MongoDB",
-  "Next.js",
+  "NextJS",
   "Git",
   "Docker",
   "Kubernetes",
