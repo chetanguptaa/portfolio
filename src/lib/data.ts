@@ -40,7 +40,7 @@ export const projectsData = [
     title: "Wacky Wisdom",
     description:
       "Developed a QUIZ app using NextJS 13, styling using TailwindCSS, and by using OpenAI api.",
-    tags: ["NextJS", "tailwindCSS", "OpenAI API"],
+    tags: ["NextJS", "tailwindCSS", "OpenAI API", "Next Auth"],
     link: "https://github.com/chetanguptaa/q-app",
   },
 ] as const;
