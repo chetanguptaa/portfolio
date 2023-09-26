@@ -1,3 +1,8 @@
+import notebook from "../../public/notebook.png";
+import portfolio from "../../public/portfolio.png";
+import quiz from "../../public/quiz.png";
+import task_manager from "../../public/task-manager.png";
+
 export const links = [
   {
     name: "Home",
@@ -23,25 +28,32 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "PaperSync",
+    title: "notebook-ai",
     description:
-      "paperSync is a user-friendly document creation and collaboration tool. Implemented using the MERN stack and Yjs for CRDT.",
-    tags: ["React", "Express", "MongoDB", "Docker"],
-    link: "https://github.com/chetanguptaa/paper-sync",
+      "Developed a Next.js-based AI-powered notebook website integrating OpenAI API for advanced document creation.",
+    tags: ["NextJS", "OpenAI Api", "Postgres", "Clerk", "TailwindCSS"],
+    imageUrl: notebook,
   },
   {
-    title: "CryptoPay",
+    title: "Portfolio",
     description:
-      "Implemented smart contracts for secure transactions and user management using solidity.",
-    tags: ["React", "Express", "TypeScript", "Solidity"],
-    link: "https://github.com/chetanguptaa/crypto-pay",
+      "Created Portfolio website for myself with NextJS, TailwindCSS for styling, and Resend for email",
+    tags: ["NextJS", "TypeScript", "TailwindCSS", "Resend"],
+    imageUrl: portfolio,
   },
   {
-    title: "Wacky Wisdom",
+    title: "Quiz App",
     description:
       "Developed a QUIZ app using NextJS 13, styling using TailwindCSS, and by using OpenAI api.",
     tags: ["NextJS", "tailwindCSS", "OpenAI API", "Next Auth"],
-    link: "https://github.com/chetanguptaa/q-app",
+    imageUrl: quiz,
+  },
+  {
+    title: "Task-Manager",
+    description:
+      "Developed a NodeJS application with Kubernetes for database and docker for creating Dockerfile and docker-compose files",
+    tags: ["MongoDB", "Express", "Kubernetes", "Docker"],
+    imageUrl: task_manager,
   },
 ] as const;
 
