@@ -29,8 +29,7 @@ export default function Intro() {
               type: "tween",
               duration: 0.2,
             }}
-          >
-          </motion.div>
+          ></motion.div>
 
           <motion.span
             className="absolute bottom-0 right-0 text-4xl"
@@ -42,8 +41,7 @@ export default function Intro() {
               delay: 0.1,
               duration: 0.7,
             }}
-          >
-          </motion.span>
+          ></motion.span>
         </div>
       </div>
 
@@ -52,9 +50,11 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Chetan Gupta.</span> I'm a currently doing{" "}
-        <span className="font-bold">full-stack developement, and DevOps</span>. I enjoy
-        building <span className="italic">Projects</span>. I am currently learning <span className="font-bold">Web 3</span>
+        <span className="font-bold">Hello, I'm Chetan Gupta.</span> I'm a
+        currently doing{" "}
+        <span className="font-bold">full-stack developement, and DevOps</span>.
+        I enjoy building <span className="italic">Projects</span>. I am
+        currently learning <span className="font-bold">Web 3</span>
       </motion.h1>
 
       <motion.div
