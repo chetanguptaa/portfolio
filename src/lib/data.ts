@@ -46,7 +46,7 @@ export const projectsData = [
   {
     title: "Quiz App",
     description:
-      "Developed a QUIZ app using NextJS, styling using TailwindCSS, and by using OpenAI API.",
+      "Developed a QUIZ app using NextJS, styling using TailwindCSS, and using OpenAI API.",
     tags: ["NextJS", "tailwindCSS", "OpenAI API", "Next Auth"],
     imageUrl: quiz,
     githubUrl: "https://github.com/chetanguptaa/q-app",
