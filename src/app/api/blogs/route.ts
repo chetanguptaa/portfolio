@@ -4,7 +4,11 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const blogs = await prisma.blog.findMany();
-    const response = NextResponse.json(blogs);
+    const response = NextResponse.json(blogs, {
+      headers: {
+        "Cache-Control": "no-store, max-age=0",
+      },
+    });
     return response;
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
