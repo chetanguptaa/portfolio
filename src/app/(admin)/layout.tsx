@@ -1,12 +1,10 @@
-"use client";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import "../globals.css";
-import { SessionProvider } from "next-auth/react";
-import Provider from "@/components/Provider";
-import { Toaster } from "react-hot-toast";
+import { Metadata } from "next";
+import AdminProvider from "@/components/providers/adminProviders";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Admin",
   description: "Admin Page",
 };
@@ -19,10 +17,7 @@ export default function AdminLayout({
   return (
     <html lang="en" className={`${inter.className}`}>
       <body>
-        <SessionProvider>
-          <Provider>{children}</Provider>
-          <Toaster position="top-right" />
-        </SessionProvider>
+        <AdminProvider>{children}</AdminProvider>
       </body>
     </html>
   );

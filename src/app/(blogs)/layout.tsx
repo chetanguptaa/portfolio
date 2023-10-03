@@ -1,13 +1,12 @@
-"use client";
-
 import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400"],
 });
 import "../globals.css";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Chetan Gupta | Blogs",
   description: "My Blogs",
 };
