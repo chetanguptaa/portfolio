@@ -1,8 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    console.log(request.url);
     const blogs = await prisma.blog.findMany();
     const response = NextResponse.json(blogs, {
       headers: {
