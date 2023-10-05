@@ -15,11 +15,14 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
     createdAt: new Date(),
     title: "loading",
   });
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getBlog = async () => {
       const response = await axios(`/api/blogs/${id}`);
-      if (response.data) setBlog(response.data);
-      else
+      if (response.data) {
+        setBlog(response.data);
+        setLoading(false);
+      } else
         setBlog({
           id: -1,
           editorState: "Does not exist",
@@ -30,7 +33,9 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
     };
     getBlog();
   }, [id]);
-  return blog.id !== -1 ? (
+  return loading ? (
+    <div>Loading...</div>
+  ) : blog.id !== -1 ? (
     <div className=" max-w-3xl container mx-auto my-auto mt-24">
       <div className="bg-white p-4 flex flex-col justify-between leading-normal">
         <div className="mb-8">
