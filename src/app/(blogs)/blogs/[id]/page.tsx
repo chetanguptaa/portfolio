@@ -11,9 +11,9 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
   const id = params.id;
   const [blog, setBlog] = useState<Blog>({
     id: parseInt(id, 10),
-    editorState: "",
+    editorState: "loading",
     createdAt: new Date(),
-    title: "",
+    title: "loading",
   });
   useEffect(() => {
     const getBlog = async () => {
@@ -22,7 +22,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
       else
         setBlog({
           id: -1,
-          editorState: "",
+          editorState: "Does not exist",
           createdAt: new Date(),
           title: "",
         });

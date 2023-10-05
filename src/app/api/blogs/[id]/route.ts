@@ -6,7 +6,6 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    console.log(request);
     const id = params.id;
     const blog = await prisma.blog.findUnique({
       where: {
