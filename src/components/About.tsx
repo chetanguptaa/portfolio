@@ -21,31 +21,23 @@ function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
         Currently pursuing a degree in{" "}
-        <span className="font-medium">Computer Science</span>, I have a passion
-        for programming. I have learned{" "}
-        <span className="font-medium">
-          full-stack web development and DevOps
-        </span>{" "}
-        and I'm currently learning about{" "}
-        <span className="font-medium">Web 3</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core skills
+        <span className="font-semibold">Computer Science</span>. My core skills
         are{" "}
-        <span className="font-medium">
+        <span className="font-semibold">
           ReactJS, ExpressJS, Docker, and Kubernetes
         </span>
-        . I am also familiar with AWS, and PostgreSQL. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
+        . I am also familiar with{" "}
+        <span className="font-semibold">AWS, and PostgreSQL</span>. I am always
+        looking to learn new technologies. I am currently looking for a{" "}
+        <span className="font-semibold">full-time position</span> as a software
         developer.
       </p>
       <p>
         <span className="italic">When I'm not coding</span>, I enjoy watching
         movies and playing football. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">philosophy and psychology</span>.
+        <span className="font-semibold">learning new things</span>. I am
+        currently learning about{" "}
+        <span className="font-semibold">philosophy and psychology</span>.
       </p>
     </motion.section>
   );

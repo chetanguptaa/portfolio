@@ -51,13 +51,15 @@ export default function Intro() {
       >
         <span className="font-bold">Hello, I'm Chetan Gupta.</span> I'm
         currently doing{" "}
-        <span className="font-bold">full-stack development and DevOps</span>. I
-        enjoy building <span className="italic">Projects</span> and I'm
-        currently learning about <span className="font-bold">Web 3</span>
+        <span className="font-extrabold">
+          Full-Stack Development and DevOps
+        </span>
+        . I enjoy building <span className="italic">Projects</span> and I'm
+        currently learning about <span className="font-extrabold">Web 3</span>
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-semibold"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
