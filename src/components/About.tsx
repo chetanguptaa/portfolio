@@ -21,11 +21,11 @@ function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3 font-semibold">
         Hello, I am Chetan Gupta. My core skills are{" "}
-        <span className="font-semibold bg-blue-400">
+        <span className="bg-blue-400">
           NextJS, PostgreSQL, Docker, and Kubernetes
         </span>
         . I am also familiar with{" "}
-        <span className="font-semibold bg-rose-300">AWS, and Golang</span>.
+        <span className="bg-rose-300">AWS, and Golang</span>.
       </p>
       <p>
         <span className="font-semibold">
