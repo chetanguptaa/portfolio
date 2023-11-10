@@ -24,7 +24,7 @@ const BlogsPage = () => {
     getBlogs();
   }, []);
   return (
-    <div className="container mx-auto p-16">
+    <div className="container mx-auto p-16 md:p-16 lg:p-16 max-w-[960px]">
       {blogs.slice(0, displayCount).map((blog) => (
         <div
           className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] mb-4 max-w-2xl mx-auto"
@@ -42,7 +42,7 @@ const BlogsPage = () => {
               Read
               <BsArrowRight />
             </button>
-            <div className="mt-4 inline-flex ml-96 pl-4 gap-2 text-sm font-medium text-rose-500">
+            <div className="mt-4 inline-flex md:ml-96 pl-4 gap-2 text-sm font-medium text-rose-500">
               <AiOutlineStar className="mt-0.5" />
               {calculateDate(blog.createdAt.toString())}
             </div>
@@ -59,7 +59,7 @@ const BlogsPage = () => {
       ))}
       {displayCount < blogs.length && (
         <button
-          className="m-4 px-4 py-2 text-black  hover:bg-[#6495ED] flex flex-col  rounded-xl max-w-md ml-28 mb-4"
+          className="text-black hover:underline rounded-xl container mx-auto my-4 transition-transform transform hover:scale-105 duration-300"
           onClick={handleShowMoreClick}
         >
           Show More
@@ -72,38 +72,6 @@ const BlogsPage = () => {
 export default BlogsPage;
 
 /**
- * <ul className="grid grid-cols-4 mx-auto max-w-[1260px] gap-10">
-        {blogs.map((blog) => (
-          <li key={blog.id} className="flex flex-col">
-            <h1>{blog.title}</h1>
-            {ReactHtmlParser(blog.editorState)}
-          </li>
-        ))}
-      </ul>
+ * m-4 md:ml-4 px-4 py-2 text-black hover:bg-[#6495ED] flex flex-col rounded-xl max-w-md ml-4 md:ml-8 mb-4
  */
-
-/**
- * <>
-      {blogs.map((blog) => (
-        <div
-          className=" max-w-sm p-3 rounded-lg dark:bg-gray-800 dark:border-gray-700 m-auto justify-center"
-          key={blog.id}
-        >
-          <div className="flex">
-            <div>{calculateDate(blog.createdAt.toString())}</div>
-            <a href="/">
-              <h5 className="mb-2 text-xl font-light tracking-tight text-gray-900 dark:text-white">
-                {blog.title}
-              </h5>
-            </a>
-            <div>
-              {Math.round(
-                Number(calculateReadingTime(blog.editorState).toFixed(1))
-              )}{" "}
-              min read
-            </div>
-          </div>
-        </div>
-      ))}
-    </>
- */
+// m-4 py-2 text-black hover:underline rounded-xl max-w-md

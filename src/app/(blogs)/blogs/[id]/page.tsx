@@ -34,12 +34,14 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
     getBlog();
   }, [id]);
   return loading ? (
-    <div>Loading...</div>
+    <div className="flex items-center justify-center h-screen">
+      <div className="animate-pulse text-2xl">Loading...</div>
+    </div>
   ) : blog.id !== -1 ? (
-    <div className=" max-w-3xl container mx-auto my-auto mt-24">
-      <div className="bg-white p-4 flex flex-col justify-between leading-normal">
+    <div className="max-w-3xl container mt-4 md:mt-4 m-auto">
+      <div className="bg-white p-4 md:p-8 flex flex-col justify-between leading-normal">
         <div className="mb-8">
-          <div className="text-gray-900 font-bold text-xl mb-2">
+          <div className="text-gray-900 font-bold text-2xl md:text-3xl mb-2">
             {blog.title.toUpperCase()}
           </div>
           <div className="flex items-center">
@@ -51,18 +53,22 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
                 )}{" "}
                 min read
               </p>
-              <p className="mt-[5px] inline-flex ml-[30rem] pl-4 text-sm text-rose-500">
+              <p className="mt-[5px] inline-flex ml-4 md:ml-8 pl-4 text-sm text-rose-500">
                 <AiOutlineStar className="mt-1 mr-2" />
                 {calculateDate(blog.createdAt.toString())}
               </p>
             </div>
           </div>
-          <>{ReactHtmlParser(blog?.editorState)}</>
+          <div className="prose max-w-full">
+            {ReactHtmlParser(blog?.editorState)}
+          </div>
         </div>
       </div>
     </div>
   ) : (
-    <div>Blog does not exist</div>
+    <div className="flex items-center justify-center h-screen">
+      <div className="text-2xl">Blog does not exist</div>
+    </div>
   );
 };
 
