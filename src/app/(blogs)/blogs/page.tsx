@@ -36,13 +36,13 @@ const BlogsPage = () => {
             </h3>
 
             <button
-              className="mt-3 inline-flex items-center gap-2 text-sm font-medium hover:text-blue-500 text-[#6495ED]"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold hover:text-blue-500 text-[#6495ED]"
               onClick={() => router.push(`blogs/${blog.id}`)}
             >
               Read
               <BsArrowRight />
             </button>
-            <div className="mt-4 inline-flex md:ml-96 pl-4 gap-2 text-sm font-medium text-rose-500">
+            <div className="mt-4 inline-flex md:ml-96 pl-4 gap-2 text-sm font-semibold text-rose-500">
               <AiOutlineStar className="mt-0.5" />
               {calculateDate(blog.createdAt.toString())}
             </div>

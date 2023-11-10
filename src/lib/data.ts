@@ -28,7 +28,7 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "notebook-ai",
+    title: "Notebook-ai",
     description:
       "Developed a NextJS-based AI-powered notebook website integrating OpenAI API for advanced document creation.",
     tags: ["NextJS", "OpenAI Api", "Postgres", "Clerk", "TailwindCSS"],
@@ -64,6 +64,7 @@ export const projectsData = [
 export const skillsData = [
   "Java",
   "JavaScript and TypeScript",
+  "PostgreSQL",
   "React",
   "Express",
   "MongoDB",
