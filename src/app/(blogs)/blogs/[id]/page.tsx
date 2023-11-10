@@ -46,7 +46,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
           </div>
           <div className="flex items-center">
             <div className="text-sm flex mt-1 mr-2 mb-4">
-              <p className="mt-1 text-sm dark:text-gray-500 flex">
+              <p className="mt-1 text-sm flex">
                 <AiOutlineRead className="mr-2 mt-1" />
                 {Math.round(
                   Number(calculateReadingTime(blog.editorState).toFixed(1))

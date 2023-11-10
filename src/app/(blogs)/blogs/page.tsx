@@ -27,11 +27,11 @@ const BlogsPage = () => {
     <div className="container mx-auto p-16 md:p-16 lg:p-16 max-w-[960px]">
       {blogs.slice(0, displayCount).map((blog) => (
         <div
-          className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] mb-4 max-w-2xl mx-auto"
+          className="flex flex-col bg-white border shadow-sm rounded-xl mb-4 max-w-2xl mx-auto"
           key={blog.id}
         >
           <div className="p-2 md:p-5">
-            <h3 className="text-md font-bold text-gray-800 dark:text-white">
+            <h3 className="text-md font-bold text-gray-800 ">
               {blog.title.toUpperCase()}
             </h3>
 
@@ -47,8 +47,8 @@ const BlogsPage = () => {
               {calculateDate(blog.createdAt.toString())}
             </div>
           </div>
-          <div className="bg-[#6495ED] rounded-b-lg py-1 px-4 md:py-1 md:px-5 dark:bg-gray-800 dark:border-gray-700">
-            <p className="mt-1 text-sm  dark:text-gray-500 flex">
+          <div className="bg-[#6495ED] rounded-b-lg py-1 px-4 md:py-1 md:px-5 ">
+            <p className="mt-1 text-sm  flex">
               {Math.round(
                 Number(calculateReadingTime(blog.editorState).toFixed(1))
               )}{" "}
@@ -70,8 +70,3 @@ const BlogsPage = () => {
 };
 
 export default BlogsPage;
-
-/**
- * m-4 md:ml-4 px-4 py-2 text-black hover:bg-[#6495ED] flex flex-col rounded-xl max-w-md ml-4 md:ml-8 mb-4
- */
-// m-4 py-2 text-black hover:underline rounded-xl max-w-md
