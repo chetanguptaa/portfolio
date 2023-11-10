@@ -24,26 +24,26 @@ const BlogsPage = () => {
     getBlogs();
   }, []);
   return (
-    <div className="container mx-auto p-16 md:p-16 lg:p-16 max-w-[960px]">
+    <div className="container mx-auto px-8 py-16 md:p-16 lg:p-16 max-w-[1020px]">
       {blogs.slice(0, displayCount).map((blog) => (
         <div
           className="flex flex-col bg-white border shadow-sm rounded-xl mb-4 max-w-2xl mx-auto"
           key={blog.id}
         >
           <div className="p-2 md:p-5">
-            <h3 className="text-md font-bold text-gray-800 ">
+            <h3 className="text-md font-bold text-gray-800">
               {blog.title.toUpperCase()}
             </h3>
 
             <button
-              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold hover:text-blue-500 text-[#6495ED]"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-medium hover:text-blue-500 text-[#6495ED]"
               onClick={() => router.push(`blogs/${blog.id}`)}
             >
               Read
               <BsArrowRight />
             </button>
-            <div className="mt-4 inline-flex md:ml-96 pl-4 gap-2 text-sm font-semibold text-rose-500">
-              <AiOutlineStar className="mt-0.5" />
+            <div className="mt-3 inline-flex gap-2 text-sm font-medium text-rose-500 float-right">
+              <AiOutlineStar className="pt-1" />
               {calculateDate(blog.createdAt.toString())}
             </div>
           </div>
