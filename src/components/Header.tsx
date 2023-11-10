@@ -65,7 +65,7 @@ export default function Header() {
           >
             <Link
               className={clsx(
-                "flex items-center justify-center hover:text-gray-950 transition pr-[0.9vh]"
+                "flex items-center justify-center hover:text-gray-950 transition px-[0.9vh]"
               )}
               href={"/blogs"}
               onClick={() => {
