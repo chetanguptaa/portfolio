@@ -7,6 +7,7 @@ import { AiOutlineRead, AiOutlineStar } from "react-icons/ai";
 import { BsArrowRight } from "react-icons/bs";
 import { calculateDate, calculateReadingTime } from "@/lib/calculate";
 import { useRouter } from "next/navigation";
+import { Button, Divider } from "@nextui-org/react";
 
 const BlogsPage = () => {
   const router = useRouter();
@@ -25,6 +26,19 @@ const BlogsPage = () => {
   }, []);
   return (
     <div className="container mx-auto px-8 py-16 md:p-16 lg:p-16 max-w-[1020px]">
+      <>
+        <Button
+          radius="full"
+          className="bg-gradient-to-tr from-red-500 to-rose-500 text-white shadow-lg items-center float-right mb-2"
+          onClick={() => {
+            router.push("/blogs/subscribe");
+          }}
+        >
+          Subscribe
+        </Button>
+      </>
+
+      <Divider className="my-4" />
       {blogs.slice(0, displayCount).map((blog) => (
         <div
           className="flex flex-col bg-white border shadow-sm rounded-xl mb-4 max-w-2xl mx-auto"
