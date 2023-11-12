@@ -58,7 +58,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
       <div
         className={`max-w-3xl m-auto ${eb_garamond.className} text-2xl font-medium text-gray-700 bg-blue-50`}
       >
-        <div className="text-justify p-4 md:p-8 flex flex-col justify-center">
+        <div className="md:text-justify p-4 md:p-8 flex flex-col justify-center">
           <div className="mb-8">
             <div className="text-gray-900 font-bold text-2xl md:text-3xl mb-2 text-center underline">
               {blog.title.toUpperCase()}
