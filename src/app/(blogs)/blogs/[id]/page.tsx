@@ -6,8 +6,15 @@ import React, { useEffect, useState } from "react";
 import ReactHtmlParser from "html-react-parser";
 import { calculateDate, calculateReadingTime } from "@/lib/calculate";
 import { AiOutlineRead, AiOutlineStar } from "react-icons/ai";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const BlogPage = ({ params }: { params: { id: string } }) => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   const id = params.id;
   const [blog, setBlog] = useState<Blog>({
     id: parseInt(id, 10),
@@ -38,29 +45,33 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
       <div className="animate-pulse text-2xl">Loading...</div>
     </div>
   ) : blog.id !== -1 ? (
-    <div className="max-w-3xl container mt-4 md:mt-4 m-auto">
-      <div className="bg-white p-4 md:p-8 flex flex-col justify-between leading-normal">
-        <div className="mb-8">
-          <div className="text-gray-900 font-bold text-2xl md:text-3xl mb-2">
-            {blog.title.toUpperCase()}
-          </div>
-          <div className="flex items-center">
-            <div className="text-sm flex mt-1 mr-2 mb-4">
-              <p className="mt-1 text-sm flex">
+    <div>
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-2 bg-blue-500 transform origin-left"
+        style={{ scaleX }}
+      />
+      <div className="max-w-3xl mt-4 md:mt-4 m-auto">
+        <div className="bg-white text-justify p-4 md:p-8 flex flex-col justify-center">
+          <div className="mb-8">
+            <div className="text-gray-900 font-bold text-2xl md:text-3xl mb-2 text-center underline">
+              {blog.title.toUpperCase()}
+            </div>
+            <div className="text-sm mr-2 mb-12">
+              <p className="text-sm flex float-left">
                 <AiOutlineRead className="mr-2 mt-1" />
                 {Math.round(
                   Number(calculateReadingTime(blog.editorState).toFixed(1))
                 )}{" "}
                 min read
               </p>
-              <p className="mt-[5px] inline-flex ml-4 md:ml-8 pl-4 text-sm text-rose-500">
-                <AiOutlineStar className="mt-1 mr-2" />
+              <p className="flex float-right text-sm text-rose-500">
+                <AiOutlineStar className="mr-2 float-right mt-1" />
                 {calculateDate(blog.createdAt.toString())}
               </p>
             </div>
-          </div>
-          <div className="prose max-w-full">
-            {ReactHtmlParser(blog?.editorState)}
+            <div className="prose max-w-full">
+              {ReactHtmlParser(blog?.editorState)}
+            </div>
           </div>
         </div>
       </div>
