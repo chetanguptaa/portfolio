@@ -2,11 +2,6 @@
 
 import { Blog } from "@prisma/client";
 import axios from "axios";
-
-import { EB_Garamond } from "next/font/google";
-const eb_garamond = EB_Garamond({
-  subsets: ["latin"],
-});
 import React, { useEffect, useState } from "react";
 import ReactHtmlParser from "html-react-parser";
 import { calculateDate, calculateReadingTime } from "@/lib/calculate";
@@ -50,13 +45,13 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
       <div className="animate-pulse text-2xl">Loading...</div>
     </div>
   ) : blog.id !== -1 ? (
-    <div className="bg-blue-50">
+    <div className="bg-white">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-blue-500 transform origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-green-400 transform origin-left"
         style={{ scaleX }}
       />
       <div
-        className={`max-w-3xl m-auto ${eb_garamond.className} text-2xl font-medium text-gray-700 bg-blue-50`}
+        className={`max-w-3xl m-auto text-2xl font-medium text-gray-700 bg-white`}
       >
         <div className="md:text-justify p-4 md:p-8 flex flex-col justify-center">
           <div className="mb-8">
