@@ -7,6 +7,12 @@ import ReactHtmlParser from "html-react-parser";
 import { calculateDate, calculateReadingTime } from "@/lib/calculate";
 import { AiOutlineRead, AiOutlineStar } from "react-icons/ai";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: "300",
+});
 
 const BlogPage = ({ params }: { params: { id: string } }) => {
   const { scrollYProgress } = useScroll();
@@ -51,11 +57,11 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
         style={{ scaleX }}
       />
       <div
-        className={`max-w-3xl m-auto text-2xl font-medium text-gray-700 bg-white`}
+        className={`max-w-3xl m-auto text-2xl font-medium text-black bg-white ${roboto.className}`}
       >
         <div className="md:text-justify p-4 md:p-8 flex flex-col justify-center">
           <div className="mb-8">
-            <div className="text-gray-900 font-bold text-2xl md:text-3xl mb-2 text-center underline">
+            <div className="text-black font-bold text-2xl md:text-3xl mb-2 text-center underline">
               {blog.title.toUpperCase()}
             </div>
             <div className="text-sm mr-2 mb-12">
@@ -71,7 +77,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
                 {calculateDate(blog.createdAt.toString())}
               </p>
             </div>
-            <div className="prose max-w-full">
+            <div className="prose max-w-full text-base font-medium">
               {ReactHtmlParser(blog?.editorState)}
             </div>
           </div>
