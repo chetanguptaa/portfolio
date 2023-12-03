@@ -1,7 +1,6 @@
 import { Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import "../globals.css";
-import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 import { Metadata } from "next";
 import MainProviders from "@/components/providers/mainProviders";
@@ -32,7 +31,6 @@ export default function RootLayout({
         <MainProviders>
           <Header />
           {children}
-          <Footer />
           <Toaster position="top-right" />
         </MainProviders>
       </body>
