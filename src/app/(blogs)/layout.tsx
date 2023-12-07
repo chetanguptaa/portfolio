@@ -5,6 +5,7 @@ const montserrat = Montserrat({
 });
 import "../globals.css";
 import { Metadata } from "next";
+import { BlogsProvider } from "@/components/providers/blogsProvider";
 
 export const metadata: Metadata = {
   title: "Chetan Gupta | Blogs",
@@ -19,7 +20,7 @@ export default function BlogsLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={`${montserrat.className} text-gray-950 relative `}>
-        {children}
+        <BlogsProvider>{children}</BlogsProvider>
       </body>
     </html>
   );

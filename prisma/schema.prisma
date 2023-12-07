@@ -22,3 +22,19 @@ model Blog {
   createdAt   DateTime @default(now())
   editorState String
 }
+
+model Subscriber {
+  id            String          @id @default(cuid())
+  email         String
+  isActive      Boolean         @default(false)
+  ActivateToken ActivateToken[]
+}
+
+model ActivateToken {
+  id           String     @id @default(cuid())
+  token        String     @unique
+  createdAt    DateTime   @default(now())
+  activatedAt  DateTime?
+  subscriber   Subscriber @relation(fields: [subscriberId], references: [id])
+  subscriberId String
+}
