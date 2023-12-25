@@ -35,11 +35,13 @@ export default function Header() {
               <MenubarContent className="bg-blue-50 font-bold mr-2">
                 {links.map((link) => (
                   <Link key={link.hash} href={`/${link.hash}`}>
-                    <MenubarItem>{link.name}</MenubarItem>
+                    <MenubarItem className="p-4 w-[75vw]">
+                      {link.name}
+                    </MenubarItem>
                   </Link>
                 ))}
                 <Link href={"/blogs"}>
-                  <MenubarItem>Blogs</MenubarItem>
+                  <MenubarItem className="p-4 w-[75vw]">Blogs</MenubarItem>
                 </Link>
               </MenubarContent>
             </MenubarMenu>
