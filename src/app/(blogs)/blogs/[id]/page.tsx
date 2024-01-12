@@ -22,27 +22,16 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
     restDelta: 0.001,
   });
   const id = params.id;
-  const [blog, setBlog] = useState<Blog>({
-    id: parseInt(id, 10),
-    editorState: "loading",
-    createdAt: new Date(),
-    title: "loading",
-  });
+  const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getBlog = async () => {
       const response = await axios(`/api/blogs/${id}`);
       if (response.data) {
         setBlog(response.data);
-        setLoading(false);
-      } else
-        setBlog({
-          id: -1,
-          editorState: "Does not exist",
-          createdAt: new Date(),
-          title: "",
-        });
-      return response;
+      }
+      setLoading(false);
+      return;
     };
     getBlog();
   }, [id]);
@@ -50,7 +39,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
     <div className="flex items-center justify-center h-screen">
       <div className="animate-pulse text-2xl">Loading...</div>
     </div>
-  ) : blog.id !== -1 ? (
+  ) : blog !== null ? (
     <div className="bg-white">
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-blue-400 transform origin-left"
