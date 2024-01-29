@@ -1,6 +1,6 @@
 import notebook from "../../public/notebook.png";
 import portfolio from "../../public/portfolio.png";
-import quiz from "../../public/quiz.png";
+import showmethemoney from "../../public/showmethemoney.png";
 import task_manager from "../../public/task-manager.png";
 
 export const links = [
@@ -28,28 +28,28 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "Notebook-ai",
+    title: "ShowMeTheMoney",
     description:
-      "Developed a NextJS-based AI-powered notebook website integrating OpenAI API for advanced document creation.",
-    tags: ["NextJS", "OpenAI Api", "Postgres", "Clerk", "TailwindCSS"],
-    imageUrl: notebook,
-    githubUrl: "https://github.com/chetanguptaa/note-book",
+      "Architected and developed a feature-rich financial management application using Next.js, TypeScript, and Tailwind CSS",
+    tags: ["NextJS", "TailwindCSS", "PostgreSQL", "Next Auth"],
+    imageUrl: showmethemoney,
+    githubUrl: "https://github.com/chetanguptaa/showmethemoney",
   },
   {
     title: "Portfolio",
     description:
       "Created a Portfolio website for me with NextJS, TailwindCSS for styling, and Resend for email.",
-    tags: ["NextJS", "TypeScript", "TailwindCSS", "Resend"],
+    tags: ["NextJS", "TypeScript", "TailwindCSS", "Framer-Motion"],
     imageUrl: portfolio,
     githubUrl: "https://github.com/chetanguptaa/portfolio-nextjs",
   },
   {
-    title: "Quiz App",
+    title: "Notebook-ai",
     description:
-      "Developed a QUIZ app using NextJS, styling using TailwindCSS, and using OpenAI API.",
-    tags: ["NextJS", "tailwindCSS", "OpenAI API", "Next Auth"],
-    imageUrl: quiz,
-    githubUrl: "https://github.com/chetanguptaa/q-app",
+      "Developed a NextJS-based AI-powered notebook website integrating OpenAI API for advanced document creation.",
+    tags: ["NextJS", "OpenAI", "Postgres", "Clerk", "TailwindCSS"],
+    imageUrl: notebook,
+    githubUrl: "https://github.com/chetanguptaa/note-book",
   },
   {
     title: "Task-Manager",
