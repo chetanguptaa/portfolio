@@ -2,6 +2,7 @@ import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -35,20 +36,20 @@ export default function Project({
         <div className="flex justify-between">
           <p className="mb-2 font-bold underline underline-offset-4">{title}</p>
           <div className="flex justify-between space-x-4 items-center">
-            <a
+            <Link
               className="text-gray-900 flex items-center text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer"
               href={github}
               target="_blank"
             >
               <FaGithub />
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-gray-900 flex items-center text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer"
               href={liveUrl}
               target="_blank"
             >
               <ExternalLink />
-            </a>
+            </Link>
           </div>
         </div>
         <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
