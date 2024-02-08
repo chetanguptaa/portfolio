@@ -1,8 +1,5 @@
-"use client";
-
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
@@ -16,7 +13,6 @@ export default function Project({
   github,
   liveUrl,
 }: ProjectProps) {
-  const router = useRouter();
   return (
     <div className="flex flex-col sm:items-center items-start sm:p-8 p-2 w-11/12 md:w-auto snap-center sm:snap-none hover:bg-blue-100 max-w-[42rem] border border-black/5 mb-4 mx-auto">
       {/* <video
