@@ -28,12 +28,13 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "ShowMeTheMoney",
+    title: "show me the money",
     description:
-      "Architected and developed a feature-rich financial management application using Next.js, TypeScript, and Tailwind CSS",
-    tags: ["NextJS", "TailwindCSS", "PostgreSQL", "Next Auth"],
+      "Architected and developed a feature-rich financial management application using Next.js, TypeScript, and Tailwind CSS.",
+    tags: ["NextJS", "TailwindCSS", "PostgreSQL", "NextAuth", "Prisma"],
     imageUrl: showmethemoney,
-    githubUrl: "https://github.com/chetanguptaa/showmethemoney",
+    github: "https://github.com/chetanguptaa/showmethemoney",
+    liveUrl: "https://showmethemoneyy.vercel.app",
   },
   {
     title: "Portfolio",
@@ -41,37 +42,32 @@ export const projectsData = [
       "Created a Portfolio website for me with NextJS, TailwindCSS for styling, and Resend for email.",
     tags: ["NextJS", "TypeScript", "TailwindCSS", "Framer-Motion"],
     imageUrl: portfolio,
-    githubUrl: "https://github.com/chetanguptaa/portfolio-nextjs",
+    github: "https://github.com/chetanguptaa/portfolio",
+    liveUrl: "https://chetangupta.vercel.app",
   },
   {
     title: "Notebook-ai",
     description:
       "Developed a NextJS-based AI-powered notebook website integrating OpenAI API for advanced document creation.",
-    tags: ["NextJS", "OpenAI", "Postgres", "Clerk", "TailwindCSS"],
+    tags: ["NextJS", "OpenAI", "Postgres", "TailwindCSS"],
     imageUrl: notebook,
-    githubUrl: "https://github.com/chetanguptaa/note-book",
-  },
-  {
-    title: "Task-Manager",
-    description:
-      "Developed a NodeJS application with Kubernetes for database and docker for creating Dockerfile and docker-compose files.",
-    tags: ["MongoDB", "Express", "Kubernetes", "Docker"],
-    imageUrl: task_manager,
-    githubUrl: "https://github.com/chetanguptaa/task-manager",
+    github: "https://github.com/chetanguptaa/note-book",
+    liveUrl: "https://notebook-ai.vercel.app",
   },
 ] as const;
 
 export const skillsData = [
-  "Java",
   "JavaScript and TypeScript",
   "PostgreSQL",
+  "NextJS",
+  "TailwindCSS",
   "React",
   "Express",
   "MongoDB",
-  "NextJS",
   "Git",
   "Docker",
   "Kubernetes",
+  "Java",
 ] as const;
 
 export const familiarWithSkillsData = ["Terraform", "AWS", "Python"] as const;

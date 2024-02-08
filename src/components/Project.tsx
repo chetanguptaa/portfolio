@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
 import { projectsData } from "@/lib/data";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -13,8 +13,65 @@ export default function Project({
   description,
   tags,
   imageUrl,
+  github,
+  liveUrl,
 }: ProjectProps) {
   const router = useRouter();
+  return (
+    <div className="flex flex-col sm:items-center items-start sm:p-8 p-2 w-11/12 md:w-auto snap-center sm:snap-none hover:bg-blue-100 max-w-[42rem] border border-black/5 mb-4 mx-auto">
+      {/* <video
+        muted
+        controls
+        title="Video of project"
+        loop
+        preload="metadata"
+        className="object-cover rounded-lg h-64 md:h-96 hidden sm:block"
+        src=""
+      /> */}
+      <Image
+        src={imageUrl}
+        alt="Project I worked on"
+        quality={95}
+        priority
+        className="hidden sm:block rounded-t-lg shadow-2xl transition hover:scale-[1.04] hover:-translate-x-3 hover:translate-y-3 hover:-rotate-2"
+      />
+      <div className="text-left items-start pt-1 sm:pt-3 w-full">
+        <div className="flex justify-between">
+          <p className="mb-2 font-bold underline underline-offset-4">{title}</p>
+          <div className="flex justify-between space-x-4 items-center">
+            <a
+              className="text-gray-900 flex items-center text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer"
+              href={github}
+              target="_blank"
+            >
+              <FaGithub />
+            </a>
+            <a
+              className="text-gray-900 flex items-center text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer"
+              href={liveUrl}
+              target="_blank"
+            >
+              <ExternalLink />
+            </a>
+          </div>
+        </div>
+        <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+          {tags.map((tag, index) => (
+            <li
+              className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full"
+              key={index}
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+        <p className="pt-2 md:w-96 lg:w-[450px] font-semibold">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+/*
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -23,8 +80,9 @@ export default function Project({
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
-  return (
-    <motion.div
+
+
+<motion.div
       ref={ref}
       style={{
         scale: scaleProgess,
@@ -60,5 +118,4 @@ export default function Project({
         />
       </section>
     </motion.div>
-  );
-}
+*/
