@@ -8,10 +8,10 @@ type Props = {
   children: React.ReactNode;
 };
 
-const MainProviders = ({ children }: Props) => {
+const Providers = ({ children }: Props) => {
   return (
     <ActiveSectionContextProvider>{children}</ActiveSectionContextProvider>
   );
 };
 
-export default MainProviders;
+export default Providers;
