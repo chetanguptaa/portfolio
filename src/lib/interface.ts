@@ -1,14 +1,9 @@
-export interface BlogCard {
-  title: string;
-  smallDescription: string;
-  currentSlug: string;
-  titleImage: any;
-  content: string;
-}
-
-export interface fullBlog {
+export interface Blog {
   currentSlug: string;
   title: string;
   content: any;
   titleImage: any;
+  releaseDate: string;
+  smallDescription: string;
+  readingTime?: number;
 }
