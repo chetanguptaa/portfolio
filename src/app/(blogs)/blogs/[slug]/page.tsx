@@ -8,6 +8,7 @@ import {
   totalWords,
 } from "@/lib/calculate";
 import { AiOutlineRead, AiOutlineStar } from "react-icons/ai";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 export const revalidate = 30; // revalidate at most 30 seconds
 
@@ -17,8 +18,10 @@ async function getData(slug: string) {
         "currentSlug": slug.current,
           title,
           content,
-          titleImage,
-          releaseDate
+          mainImage,
+          categories,
+          publishedAt,
+          author
       }[0]`;
 
   const data = await client.fetch(query);
@@ -38,7 +41,7 @@ export default async function BlogArticlePage({
       <div
         className={`container max-w-6xl m-auto text-2xl font-medium text-black bg-white`}
       >
-        <div className="md:text-justify p-4 md:p-8 flex flex-col justify-center">
+        <div className="md:text-justify p-4 md:p-8 flex flex-col justify-between">
           <div className="text-black font-bold text-2xl md:text-3xl mb-2 text-center underline">
             {data.title}
           </div>
@@ -49,23 +52,46 @@ export default async function BlogArticlePage({
             </p>
             <p className="flex text-sm text-rose-500">
               <AiOutlineStar className="mr-2 float-right mt-1" />
-              {calculateDate(data.releaseDate)}
+              {calculateDate(data.publishedAt)}
             </p>
           </div>
           <Image
-            src={urlFor(data.titleImage).url()}
-            width={1200}
-            height={1200}
+            src={urlFor(data.mainImage).url()}
+            width={400}
+            height={400}
             alt="Title Image"
             priority
             className="rounded-lg mt-8 border"
           />
 
           <div className="prose max-w-full text-base font-medium mt-8">
-            <PortableText value={data.content} />
+            <PortableText
+              value={data.content}
+              components={{
+                types: {
+                  image: ImageComponent,
+                },
+              }}
+            />
           </div>
         </div>
       </div>
     </>
   );
 }
+
+const ImageComponent = ({ value }: { value: any }) => {
+  const { width, height } = getImageDimensions(urlFor(value).url());
+  return (
+    <Image
+      src={urlFor(value).width(800).fit("max").auto("format").url()}
+      alt={value.alt || " "}
+      width={width}
+      height={height}
+      loading="lazy"
+      style={{
+        aspectRatio: width / height,
+      }}
+    />
+  );
+};

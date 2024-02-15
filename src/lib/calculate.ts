@@ -11,12 +11,16 @@ export function calculateDate(blogDate: string) {
   return newDateArr[2] + "/" + newDateArr[1] + "/" + newDateArr[0];
 }
 
-export const totalWords = (data: any): number => {
+export const totalWords = (content: any): number => {
   let totalLength = 0;
-  data.forEach((block: any) => {
-    block.children.forEach((blockElement: any) => {
-      totalLength += blockElement.text.length;
-    });
+  content.forEach((block: any) => {
+    if (block.children) {
+      block.children.forEach((blockElement: any) => {
+        const textContent = blockElement.text?.replace(/<[^>]*>/g, "");
+        const words = textContent.split(/\s+/);
+        totalLength += words.length;
+      });
+    }
   });
   return totalLength;
 };

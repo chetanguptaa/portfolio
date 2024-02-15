@@ -1,48 +1,69 @@
-export default {
+import { defineField, defineType } from "sanity";
+
+export default defineType({
   name: "blog",
-  type: "document",
   title: "Blog",
+  type: "document",
   fields: [
-    {
+    defineField({
       name: "title",
+      title: "Title",
       type: "string",
-      title: "Title of blog article",
-    },
-    {
+    }),
+    defineField({
       name: "slug",
+      title: "Slug",
       type: "slug",
-      title: "Slug of your blog article",
       options: {
         source: "title",
       },
-    },
-    {
-      name: "titleImage",
-      type: "image",
-      title: "Title Image",
-    },
-    {
+    }),
+    defineField({
       name: "smallDescription",
+      title: "description",
       type: "text",
-      title: "Small Description",
-    },
-    {
-      name: "content",
+    }),
+    defineField({
+      name: "author",
+      title: "Author",
+      type: "reference",
+      to: { type: "author" },
+    }),
+    defineField({
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
+    }),
+    defineField({
+      name: "categories",
+      title: "Categories",
       type: "array",
-      title: "Content",
-      of: [
-        {
-          type: "block",
-        },
-      ],
-    },
-    {
-      title: "Release date",
-      name: "releaseDate",
+      of: [{ type: "reference", to: { type: "category" } }],
+    }),
+    defineField({
+      name: "publishedAt",
+      title: "Published at",
       type: "date",
       options: {
         dateFormat: "DD-MM-YYYY",
       },
-    },
+    }),
+    defineField({
+      name: "content",
+      title: "Content",
+      type: "blockContent",
+    }),
   ],
-};
+
+  preview: {
+    select: {
+      title: "title",
+      author: "author.name",
+      media: "mainImage",
+    },
+    prepare(selection) {
+      const { author } = selection;
+      return { ...selection, subtitle: author && `by ${author}` };
+    },
+  },
+});

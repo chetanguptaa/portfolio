@@ -2,8 +2,8 @@ export interface Blog {
   currentSlug: string;
   title: string;
   content: any;
-  titleImage: any;
-  releaseDate: string;
+  mainImage: any;
+  publishedAt: string;
   smallDescription: string;
   readingTime?: number;
 }

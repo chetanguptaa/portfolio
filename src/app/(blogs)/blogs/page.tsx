@@ -14,7 +14,7 @@ async function getData() {
     smallDescription,
     "currentSlug": slug.current,
     content,
-    releaseDate
+    publishedAt
   }`;
   const data = await client.fetch(query);
   return data;
@@ -45,7 +45,7 @@ export default async function BlogsPage() {
             </Link>
             <div className="mt-3 inline-flex gap-2 text-sm font-medium text-rose-500 float-right">
               <AiOutlineStar className="pt-1" />
-              {blog.releaseDate}
+              {blog.publishedAt}
             </div>
           </div>
           <div className="bg-[#6495ED] rounded-b-lg py-1 px-4 md:py-1 md:px-5 ">
