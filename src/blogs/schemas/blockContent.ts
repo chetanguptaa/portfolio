@@ -21,18 +21,9 @@ export default {
       ],
     },
     {
-      type: "code",
       name: "code",
-      title: "Code with all options",
-      options: {
-        language: "javascript",
-        languageAlternatives: [
-          { title: "Javascript", value: "javascript" },
-          { title: "TypeScript", value: "typescript" },
-          { title: "tsx", value: "tsx" },
-        ],
-        withFilename: true,
-      },
+      title: "Code Block",
+      type: "code",
     },
   ],
 };
