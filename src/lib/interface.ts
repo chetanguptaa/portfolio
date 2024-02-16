@@ -6,4 +6,5 @@ export interface Blog {
   publishedAt: string;
   smallDescription: string;
   readingTime?: number;
+  author: any;
 }

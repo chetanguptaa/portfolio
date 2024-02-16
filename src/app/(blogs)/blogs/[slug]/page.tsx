@@ -7,10 +7,11 @@ import {
   calculateReadingTime,
   totalWords,
 } from "@/lib/calculate";
-import { AiOutlineRead, AiOutlineStar } from "react-icons/ai";
 import { getImageDimensions } from "@sanity/asset-utils";
 import DoesNotExist from "./does-not-exist";
-import { DotIcon } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const revalidate = 30; // revalidate at most 30 seconds
 
@@ -23,7 +24,8 @@ async function getData(slug: string) {
           mainImage,
           categories,
           publishedAt,
-          author
+          author,
+          smallDescription,
       }[0]`;
 
   const data = await client.fetch(query);
@@ -41,28 +43,38 @@ export default async function BlogArticlePage({
   data.readingTime = readingTime;
   return (
     <>
-      <div className={"container px-8 py-16 md:p-16 lg:p-16 max-w-6xl m-auto"}>
-        <div className="md:text-justify p-4 md:px-8 flex flex-col justify-between">
+      <div className={"container max-w-6xl mt-16 mx-auto"}>
+        <div className="flex flex-col justify-between">
           <div className="text-xs space-x-1 mb-2 font-[800] text-gray-900 text-center">
-            <span>{calculateDate(data.publishedAt)} •</span>
+            <span>{calculateDate(data.publishedAt)} |</span>
             <span>
-              {Math.round(Number(data.readingTime.toFixed(1)))} MIN READ •
+              {Math.round(Number(data.readingTime.toFixed(1)))} MIN READ |
             </span>
-            <span className="text-blue-500 font-bold">CHETAN GUPTA</span>
+            <span className="text-blue-500 font-bold">CHETAN GUPTA </span>
           </div>
           <div className="text-gray-800 font-[800] text-6xl  mb-2 text-center">
             {data.title}
           </div>
-          <Image
-            src={urlFor(data.mainImage).url()}
-            width={400}
-            height={400}
-            alt="Title Image"
-            priority
-            className="rounded-lg mt-8 border"
-          />
-
-          <div className="prose max-w-full text-base font-medium mt-8">
+          <div className="flex justify-center items-center">
+            <Image
+              src={urlFor(data.mainImage).url()}
+              width={1400}
+              height={1400}
+              alt="Title Image"
+              priority
+              className="rounded-lg mt-8 border"
+            />
+          </div>
+          <div className="prose container max-w-3xl text-base font-semibold mt-16">
+            <p>
+              This is a weekly newsletter written by{" "}
+              <Link href="/" className="text-blue-700 font-semibold">
+                Chetan Gupta
+              </Link>
+              .
+            </p>
+            <p>{data.smallDescription}</p>
+            <Separator className="my-16 bg-gray-700" />
             <PortableText
               value={data.content}
               components={{
@@ -71,6 +83,16 @@ export default async function BlogArticlePage({
                 },
               }}
             />
+            <div className="flex justify-center items-center flex-col mb-8 gap-1">
+              <span className=" font-black text-2xl">Published by:</span>
+              <Avatar>
+                {/* <AvatarImage
+                  src="https://lh3.googleusercontent.com/a/ACg8ocLwgepGOjww1o6QrqpgE7odDcxzduI0WTI3vyyzkWINPw=s96-c"
+                  alt="@chetangupta"
+                /> */}
+                <AvatarFallback>CG</AvatarFallback>
+              </Avatar>
+            </div>
           </div>
         </div>
       </div>
