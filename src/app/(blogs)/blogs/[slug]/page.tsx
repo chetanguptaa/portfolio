@@ -10,6 +10,7 @@ import {
 import { AiOutlineRead, AiOutlineStar } from "react-icons/ai";
 import { getImageDimensions } from "@sanity/asset-utils";
 import DoesNotExist from "./does-not-exist";
+import { DotIcon } from "lucide-react";
 
 export const revalidate = 30; // revalidate at most 30 seconds
 
@@ -40,22 +41,17 @@ export default async function BlogArticlePage({
   data.readingTime = readingTime;
   return (
     <>
-      <div
-        className={`container max-w-6xl m-auto text-2xl font-medium text-black bg-white`}
-      >
-        <div className="md:text-justify p-4 md:p-8 flex flex-col justify-between">
-          <div className="text-black font-bold text-2xl md:text-3xl mb-2 text-center underline">
-            {data.title}
+      <div className={"container px-8 py-16 md:p-16 lg:p-16 max-w-6xl m-auto"}>
+        <div className="md:text-justify p-4 md:px-8 flex flex-col justify-between">
+          <div className="text-xs space-x-1 mb-2 font-[800] text-gray-900 text-center">
+            <span>{calculateDate(data.publishedAt)} •</span>
+            <span>
+              {Math.round(Number(data.readingTime.toFixed(1)))} MIN READ •
+            </span>
+            <span className="text-blue-500 font-bold">CHETAN GUPTA</span>
           </div>
-          <div className="text-sm flex justify-between mb-12">
-            <p className="text-sm flex">
-              <AiOutlineRead className="mr-2 mt-1" />
-              {Math.round(Number(data.readingTime.toFixed(1)))} min read
-            </p>
-            <p className="flex text-sm text-rose-500">
-              <AiOutlineStar className="mr-2 float-right mt-1" />
-              {calculateDate(data.publishedAt)}
-            </p>
+          <div className="text-gray-800 font-[800] text-6xl  mb-2 text-center">
+            {data.title}
           </div>
           <Image
             src={urlFor(data.mainImage).url()}

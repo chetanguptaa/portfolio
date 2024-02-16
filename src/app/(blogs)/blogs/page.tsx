@@ -1,4 +1,8 @@
-import { calculateReadingTime, totalWords } from "@/lib/calculate";
+import {
+  calculateDate,
+  calculateReadingTime,
+  totalWords,
+} from "@/lib/calculate";
 import { Blog } from "@/lib/interface";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
@@ -28,12 +32,10 @@ export default async function BlogsPage() {
   }
   return (
     <>
-      <div className="bg-blue-50 absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
-      <div className="bg-blue-50 absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"></div>
       {data.length === 0 ? (
         <NoBlogs />
       ) : (
-        <div className="container px-8 py-16 md:p-16 lg:p-16 max-w-[1440px]">
+        <div className="container px-8 py-16 md:p-16 lg:p-16 m-auto sm:max-w-screen-xl items-center max-w-screen-sm">
           {data.map((blog, idx) => (
             <div
               className="flex flex-col bg-white border shadow-sm rounded-xl mb-4 max-w-2xl mx-auto"
@@ -52,7 +54,7 @@ export default async function BlogsPage() {
                 </Link>
                 <div className="mt-3 inline-flex gap-2 text-sm font-medium text-rose-500 float-right">
                   <AiOutlineStar className="pt-1" />
-                  {blog.publishedAt}
+                  {calculateDate(blog.publishedAt)}
                 </div>
               </div>
               <div className="bg-[#6495ED] rounded-b-lg py-1 px-4 md:py-1 md:px-5 ">

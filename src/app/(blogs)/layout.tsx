@@ -1,6 +1,7 @@
 import "../globals.css";
 import { Metadata } from "next";
 import { Mulish } from "next/font/google";
+import Navbar from "./components/navbar";
 
 const mulish = Mulish({ subsets: ["latin"], weight: "300" });
 
@@ -19,6 +20,7 @@ export default function BlogsLayout({
       <body
         className={`${mulish.className} text-gray-950 relative antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

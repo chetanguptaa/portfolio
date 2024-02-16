@@ -6,9 +6,26 @@ export function calculateReadingTime(
   return readingTime;
 }
 export function calculateDate(blogDate: string) {
-  let newDate = blogDate.split("T");
-  let newDateArr = newDate[0].split("-");
-  return newDateArr[2] + "/" + newDateArr[1] + "/" + newDateArr[0];
+  const months = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC",
+  ];
+  const date = new Date(blogDate);
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const formattedDate = `${month} ${day}, ${year}`;
+  return formattedDate;
 }
 
 export const totalWords = (content: any): number => {
