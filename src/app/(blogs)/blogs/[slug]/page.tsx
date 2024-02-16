@@ -85,15 +85,25 @@ export default async function BlogArticlePage({
                 },
               }}
             />
-            <div className="flex justify-center items-center flex-col mb-8 gap-1">
+            <div className="flex justify-center items-center flex-col gap-1 my-8">
               <span className=" font-black text-2xl">Published by:</span>
-              <Avatar>
+              {/* <Avatar>
                 <AvatarImage
                   src="https://lh3.googleusercontent.com/a/ACg8ocLwgepGOjww1o6QrqpgE7odDcxzduI0WTI3vyyzkWINPw=s96-c"
                   alt="chetan gupta"
                 />
                 <AvatarFallback>CG</AvatarFallback>
-              </Avatar>
+              </Avatar> */}
+
+              <Image
+                src="https://lh3.googleusercontent.com/a/ACg8ocLwgepGOjww1o6QrqpgE7odDcxzduI0WTI3vyyzkWINPw=s96-c"
+                alt="Chetan Gupta"
+                width="48"
+                height="48"
+                quality="95"
+                priority={true}
+                className="h-12 w-12 rounded-full object-cover"
+              />
             </div>
           </div>
         </div>
