@@ -16,7 +16,9 @@ export default function BlogsLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={`${mulish.className} text-gray-950 relative `}>
+      <body
+        className={`${mulish.className} text-gray-950 relative antialiased`}
+      >
         {children}
       </body>
     </html>
