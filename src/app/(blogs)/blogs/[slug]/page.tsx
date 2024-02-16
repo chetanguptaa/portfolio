@@ -66,7 +66,7 @@ export default async function BlogArticlePage({
               className="rounded-lg mt-8 border"
             />
           </div>
-          <div className="prose container max-w-3xl text-base font-semibold mt-16">
+          <div className="prose sm:container sm:max-w-3xl max-w-full text-base font-semibold mt-16">
             <p>
               This is a weekly newsletter written by{" "}
               <Link href="/" className="text-blue-700 font-semibold">
