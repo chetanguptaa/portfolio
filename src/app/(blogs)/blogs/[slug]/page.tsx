@@ -9,6 +9,7 @@ import {
 } from "@/lib/calculate";
 import { AiOutlineRead, AiOutlineStar } from "react-icons/ai";
 import { getImageDimensions } from "@sanity/asset-utils";
+import DoesNotExist from "./does-not-exist";
 
 export const revalidate = 30; // revalidate at most 30 seconds
 
@@ -34,6 +35,7 @@ export default async function BlogArticlePage({
   params: { slug: string };
 }) {
   const data: Blog = await getData(params.slug);
+  if (data === null) return <DoesNotExist />;
   const readingTime = calculateReadingTime(totalWords(data.content));
   data.readingTime = readingTime;
   return (
