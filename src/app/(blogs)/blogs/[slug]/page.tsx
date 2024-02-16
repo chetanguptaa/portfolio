@@ -12,6 +12,7 @@ import DoesNotExist from "./does-not-exist";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { CodeComponent } from "./code-component";
 
 export const revalidate = 30; // revalidate at most 30 seconds
 
@@ -80,16 +81,17 @@ export default async function BlogArticlePage({
               components={{
                 types: {
                   image: ImageComponent,
+                  myCodeField: CodeComponent,
                 },
               }}
             />
             <div className="flex justify-center items-center flex-col mb-8 gap-1">
               <span className=" font-black text-2xl">Published by:</span>
               <Avatar>
-                {/* <AvatarImage
+                <AvatarImage
                   src="https://lh3.googleusercontent.com/a/ACg8ocLwgepGOjww1o6QrqpgE7odDcxzduI0WTI3vyyzkWINPw=s96-c"
-                  alt="@chetangupta"
-                /> */}
+                  alt="chetan gupta"
+                />
                 <AvatarFallback>CG</AvatarFallback>
               </Avatar>
             </div>
