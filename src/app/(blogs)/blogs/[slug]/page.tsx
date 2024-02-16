@@ -81,7 +81,7 @@ export default async function BlogArticlePage({
               components={{
                 types: {
                   image: ImageComponent,
-                  myCodeField: CodeComponent,
+                  code: CodeComponent,
                 },
               }}
             />
