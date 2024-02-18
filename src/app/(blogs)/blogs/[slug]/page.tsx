@@ -11,8 +11,8 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import DoesNotExist from "./does-not-exist";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CodeComponent } from "./code-component";
+import chetan from "../../../../../public/chetan.jpg";
 
 export const revalidate = 30; // revalidate at most 30 seconds
 
@@ -87,16 +87,8 @@ export default async function BlogArticlePage({
             />
             <div className="flex justify-center items-center flex-col gap-1 my-8">
               <span className=" font-black text-2xl">Published by:</span>
-              {/* <Avatar>
-                <AvatarImage
-                  src="https://lh3.googleusercontent.com/a/ACg8ocLwgepGOjww1o6QrqpgE7odDcxzduI0WTI3vyyzkWINPw=s96-c"
-                  alt="chetan gupta"
-                />
-                <AvatarFallback>CG</AvatarFallback>
-              </Avatar> */}
-
               <Image
-                src="https://lh3.googleusercontent.com/a/ACg8ocLwgepGOjww1o6QrqpgE7odDcxzduI0WTI3vyyzkWINPw=s96-c"
+                src={chetan}
                 alt="Chetan Gupta"
                 width="48"
                 height="48"
