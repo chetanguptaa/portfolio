@@ -56,17 +56,21 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "JavaScript and TypeScript",
+  "TypeScript",
   "PostgreSQL",
-  "NextJS",
+  "Next.js",
   "TailwindCSS",
-  "React",
-  "Express",
+  "React.js",
+  "Node.js / Express.js",
+  "tRPC",
+  "TurboRepo",
+  "Nginx",
   "MongoDB",
+  "Prisma",
   "Git",
   "Docker",
   "Kubernetes",
   "Java",
+  "AWS",
+  "Golang",
 ] as const;
-
-export const familiarWithSkillsData = ["Terraform", "AWS", "Python"] as const;
