@@ -61,6 +61,7 @@ export const skillsData = [
   "Next.js",
   "TailwindCSS",
   "React.js",
+  "Recoil",
   "Node.js",
   "Express.js",
   "tRPC",
