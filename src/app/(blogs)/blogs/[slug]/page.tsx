@@ -53,7 +53,7 @@ export default async function BlogArticlePage({
             </span>
             <span className="text-blue-500 font-bold">CHETAN GUPTA </span>
           </div>
-          <div className="text-gray-800 font-[800] text-6xl  mb-2 text-center">
+          <div className="text-gray-800 font-[800] sm:text-6xl text-4xl  mb-2 text-center break-all">
             {data.title}
           </div>
           <div className="flex justify-center items-center">
