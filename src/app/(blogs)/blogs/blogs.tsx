@@ -40,7 +40,9 @@ const Blogs = ({ data }: Props) => {
               </p>
             </div>
           </div>
-          {idx !== visibleBlogs - 1 && <Separator className="my-4" />}
+          {(idx !== visibleBlogs - 1 || idx !== data.length - 1) && (
+            <Separator className="my-4" />
+          )}
         </Link>
       ))}
       {data.length > visibleBlogs && (
