@@ -17,6 +17,6 @@ This repository contains the source code and assets for my personal website.
 2. Download all the dependencies by running pnpm install in the terminal.
 3. Go to localhost:3000 to check it out.
 
-## 😁 Author -
+## Author -
 
 [**@chetanguptaa**](https://github.com/chetanguptaa)
