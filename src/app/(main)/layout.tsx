@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { Metadata } from "next";
 import Providers from "@/components/providers/providers";
 import { Mulish } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const mulish = Mulish({ subsets: ["latin"], weight: "300" });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Toaster position="top-right" />
+          <Analytics />
         </Providers>
       </body>
     </html>
