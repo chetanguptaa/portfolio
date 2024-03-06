@@ -2,15 +2,9 @@
 
 import React from "react";
 import { Resend } from "resend";
-import { validateString, getErrorMessage } from "@/lib/utils";
+import { validateString } from "@/lib/utils";
 import ContactFormEmail from "@/email/contact-form-email";
-
-export enum Status {
-  "SUCCESS",
-  "FAILURE",
-  "INVALIDEMAIL",
-  "INVALIDMESSAGE",
-}
+import { Status } from "./types";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -29,10 +23,8 @@ export const sendEmail = async (formData: FormData) => {
       status: Status.INVALIDMESSAGE,
     };
   }
-
-  let data;
   try {
-    data = await resend.emails.send({
+    await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: "chetanguptaaaa21@gmail.com",
       subject: "Message from contact form",
