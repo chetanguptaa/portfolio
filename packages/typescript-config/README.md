@@ -1,0 +1,1 @@
+@portfolio/typescript-config

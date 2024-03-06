@@ -1,0 +1,12 @@
+node_modules
+pnpm-lock.yaml
+.vscode
+.next
+.turbo
+dist
+.github
+*.yml
+*.yaml
+*.env
+.env
+.env.*
