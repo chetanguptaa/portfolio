@@ -28,7 +28,9 @@ async function getData() {
 export default async function Home() {
   const data: Blog[] = await getData();
   for (let i = 0; i < data.length; i++) {
-    data[i].readingTime = calculateReadingTime(totalWords(data[i].content));
+    if (data[i]) {
+      data[i]!.readingTime = calculateReadingTime(totalWords(data[i]!.content));
+    }
   }
   return (
     <main className="flex flex-col items-center px-4">

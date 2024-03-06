@@ -22,7 +22,9 @@ async function getData() {
 export default async function BlogsPage() {
   const data: Blog[] = await getData();
   for (let i = 0; i < data.length; i++) {
-    data[i].readingTime = calculateReadingTime(totalWords(data[i].content));
+    if (data[i]) {
+      data[i]!.readingTime = calculateReadingTime(totalWords(data[i]!.content));
+    }
   }
   return <>{data.length === 0 ? <NoBlogs /> : <Blogs data={data} />}</>;
 }
