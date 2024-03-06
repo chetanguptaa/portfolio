@@ -44,8 +44,8 @@ export default function Contact() {
         action={async (formData) => {
           const res = await sendEmail(formData);
 
-          if (res.error) {
-            toast.error(res.error);
+          if (res.error !== "undefined") {
+            toast.error("An Error occoured please try again later!");
             return;
           }
 
