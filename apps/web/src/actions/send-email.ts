@@ -5,6 +5,13 @@ import { Resend } from "resend";
 import { validateString, getErrorMessage } from "@/lib/utils";
 import ContactFormEmail from "@/email/contact-form-email";
 
+export enum Status {
+  "SUCCESS",
+  "FAILURE",
+  "INVALIDEMAIL",
+  "INVALIDMESSAGE",
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
@@ -14,12 +21,12 @@ export const sendEmail = async (formData: FormData) => {
   // simple server-side validation
   if (!validateString(senderEmail, 500)) {
     return {
-      error: "Invalid sender email",
+      status: Status.INVALIDEMAIL,
     };
   }
   if (!validateString(message, 5000)) {
     return {
-      error: "Invalid message",
+      status: Status.INVALIDMESSAGE,
     };
   }
 
@@ -35,13 +42,12 @@ export const sendEmail = async (formData: FormData) => {
         senderEmail: senderEmail,
       }),
     });
+    return {
+      status: Status.SUCCESS,
+    };
   } catch (error: unknown) {
     return {
-      error: getErrorMessage(error),
+      status: Status.FAILURE,
     };
   }
-
-  return {
-    data,
-  };
 };

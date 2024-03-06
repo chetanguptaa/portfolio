@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import SubmitBtn from "./SubmitBtn";
 import toast from "react-hot-toast";
-import { sendEmail } from "@/actions/send-email";
+import { Status, sendEmail } from "@/actions/send-email";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -43,12 +43,18 @@ export default function Contact() {
         className="mt-10 flex flex-col "
         action={async (formData) => {
           const res = await sendEmail(formData);
-
-          if (res.error !== "undefined") {
+          if (res.status === Status.FAILURE) {
             toast.error("An Error occoured please try again later!");
             return;
           }
-
+          if (res.status === Status.INVALIDEMAIL) {
+            toast.error("The Email Address is invalid, please try again with a different email!");
+            return;
+          }
+          if (res.status === Status.INVALIDMESSAGE) {
+            toast.error("The Message should be less than 5000 characters");
+            return;
+          }
           toast.success("Email sent successfully!");
         }}
       >
