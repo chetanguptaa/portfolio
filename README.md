@@ -5,7 +5,7 @@ This repository contains the source code and assets for my personal website.
 ## ⚡ Technologies Used
 
     1. TypeScript
-    2. NextJS
+    2. NextJS and TurboRepo
     3. TailwindCSS and ShadcnUI
     4. Framer-Motion
     5. Sanity.io
