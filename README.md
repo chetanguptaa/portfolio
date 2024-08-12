@@ -9,7 +9,7 @@ This repository contains the source code and assets for my personal website.
     3. TailwindCSS and ShadcnUI
     4. Framer-Motion
     5. Sanity.io
-    6. Icons provided by lucide-react and React-Icons.
+    6. Icons provided by lucide react and React-Icons.
 
 ## 🍂 Setup
 
@@ -20,3 +20,4 @@ This repository contains the source code and assets for my personal website.
 ## Author -
 
 [**@chetanguptaa**](https://github.com/chetanguptaa)
+
