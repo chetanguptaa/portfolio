@@ -1,6 +1,8 @@
 import notebook from "../../public/notebook.png";
 import portfolio from "../../public/portfolio.png";
 import showmethemoney from "../../public/showmethemoney.png";
+import { CgWorkAlt } from "react-icons/cg";
+import React from "react";
 
 export const links = [
   {
@@ -14,6 +16,10 @@ export const links = [
   {
     name: "About",
     hash: "#about",
+  },
+  {
+    name: "Experience",
+    hash: "#experience",
   },
   {
     name: "Projects",
@@ -78,4 +84,17 @@ export const skillsData = [
   "Java",
   "AWS",
   "Golang",
+  "Redis",
+  "Kafka",
+] as const;
+
+export const experiencesData = [
+  {
+    title: "Software Engineer",
+    company: "Cantilever Labs",
+    description:
+      "Worked as a full stack developer where my main tech stack was mern stack and aws, here i also had experience working with redis, kafka, and container orchestration.",
+    icon: React.createElement(CgWorkAlt),
+    date: "March, 2024 - present",
+  },
 ] as const;

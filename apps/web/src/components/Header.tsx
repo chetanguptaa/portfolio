@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="z-[999] relative">
       <motion.div
-        className="hidden sm:block fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none sm:border bg-blue-50 sm:bg-white bg-opacity-80 backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
+        className="hidden sm:block fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none sm:border bg-blue-50 sm:bg-white bg-opacity-80 backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[38rem] md:w-[45rem] 2xl:w-[52rem] sm:rounded-full"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
@@ -25,14 +25,14 @@ export default function Header() {
               <MenubarTrigger>
                 <MenuIcon size={40} />
               </MenubarTrigger>
-              <MenubarContent className="bg-blue-50 font-bold mr-2">
+              <MenubarContent className="bg-blue-50 font-bold mr-1">
                 {links.map((link) => (
                   <Link key={link.hash} href={`/${link.hash}`}>
-                    <MenubarItem className="p-4 w-[75vw]">{link.name}</MenubarItem>
+                    <MenubarItem className="p-4 w-[64vw]">{link.name}</MenubarItem>
                   </Link>
                 ))}
                 <Link href={"/blogs"}>
-                  <MenubarItem className="p-4 w-[75vw]">Blogs</MenubarItem>
+                  <MenubarItem className="p-4 w-[64vw]">Blogs</MenubarItem>
                 </Link>
               </MenubarContent>
             </MenubarMenu>
@@ -40,7 +40,7 @@ export default function Header() {
         </div>
       </div>
       <nav className="hidden sm:flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-        <ul className="flex w-[22rem] items-center justify-center gap-y-0.5 sm:gap-y-0 text-[0.9rem] font-bold text-gray-500 sm:w-[initial] ml-4 mr-4 sm:gap-5 sm:flex-nowrap">
+        <ul className="flex items-center justify-center gap-y-0.5 sm:gap-y-0 text-[0.9rem] font-bold text-gray-500 ml-4 mr-4 sm:gap-5 sm:flex-nowrap flex-wrap w-full max-w-[90%] sm:max-w-[36rem]">
           {links.map((link) => (
             <motion.li
               className="h-3/4 flex items-center justify-center relative"
@@ -62,7 +62,6 @@ export default function Header() {
                 }}
               >
                 {link.name}
-
                 {link.name === activeSection && (
                   <motion.span
                     className="bg-gray-100 rounded-full absolute inset-0 -z-10 "

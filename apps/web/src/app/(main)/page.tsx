@@ -9,6 +9,7 @@ import { calculateReadingTime, totalWords } from "@/lib/calculate";
 import { Blog } from "@/lib/interface";
 import { client } from "@/lib/sanity";
 import NoBlogs from "@/components/blogs/no-blogs";
+import Experience from "@/components/Experience";
 
 export const revalidate = 30;
 
@@ -38,6 +39,7 @@ export default async function Home() {
       <SectionDivider />
       {data.length === 0 ? <NoBlogs /> : <Recents data={data} />}
       <About />
+      <Experience />
       <Projects />
       <Skills />
       <Contact />
